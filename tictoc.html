@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+        <!-- Latest compiled and minified CSS bootsrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript of bootstrap -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+		<style>
+            
+            #centerSection {
+                
+                width: 600px;
+                height: 600px;
+                position: relative;
+                top: 250px;
+                
+            }
+            		
+			.gameSquare {
+			
+				width: 50px;
+				height: 50px;
+			    background-color: white;
+                margin: 0px;
+                
+			}
+			
+            
+            td {
+                
+                margin: 0px;
+                
+            }
+			
+			.a11 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 4px;
+                border-right-width: 4px;
+                border-left-width: 0px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}
+            
+			.a12 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 4px;
+                border-right-width: 0px;
+                border-left-width: 0px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}            
+            
+			.a13 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 4px;
+                border-right-width: 0px;
+                border-left-width: 4px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}    
+
+			.a21 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 4px;
+                border-right-width: 4px;
+                border-left-width: 0px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}   
+            
+			.a22 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 4px;
+                border-right-width: 0px;
+                border-left-width: 0px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}   
+			.a23 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 4px;
+                border-right-width: 0px;
+                border-left-width: 4px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}               
+
+			.a31 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 0px;
+                border-right-width: 4px;
+                border-left-width: 0px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}   
+            
+			.a32 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 0px;
+                border-right-width: 0px;
+                border-left-width: 0px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}   
+			.a33 {
+			
+                border-top-width: 0px;
+				border-bottom-width: 0px;
+                border-right-width: 0px;
+                border-left-width: 4px;
+                border-color: black;
+                border-style: solid;
+                background-color: white;
+			
+			}                           
+		
+		</style>
+	
+		<title> X vs. O </title>
+	
+	</head>
+
+	<body>
+		
+		<center>
+		<div class= "container-fluid"> <!-- should be pretty responsive section -->
+				
+            <div id= "centerSection">
+
+                <div id= "welcomeSection">
+                <!-- Welcome section that asks player to choose cross or circle.
+                buttons for cross and circle, ids crossSelect and circleSelect -->
+                <p>
+
+                    Choose X or O by clicking relevant button please: <br>
+                    <input type= "button" class= "selectors" id= "crossSelect" value= "X"></input>
+                    <input type= "button" class= "selectors" id= "circleSelect" value= "O"></input>
+
+                </p>
+
+                </div>
+
+                <!--  info section	-->
+                <div id= "infoSection">
+
+                    <p id= "infoBox"></p>
+
+                </div>	
+
+                <div id ="tableSection">
+                <!-- big table with 3 rows with 3 columns
+                buttons that wont look like buttons.
+
+                button ids: 11 12 13
+                            21 22 23
+                            31 32 33
+                -->
+
+                <table>
+
+                    <tr id= "row1"> <!-- row 1-->
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a11" type= "button" id= "11" value= ""></input>
+
+                        </td>
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a12" type= "button" id= "12" value= ""></input>
+
+                        </td>
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a13" type= "button" id= "13" value= ""></input>
+
+                        </td>					
+
+                    </tr>	
+
+                    <tr id= "row2"> <!-- row 2-->
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a21" type= "button" id= "21" value= ""></input>
+
+                        </td>
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a22" type= "button" id= "22" value= ""></input>
+
+                        </td>
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a23" type= "button" id= "23" value= ""></input>
+
+                        </td>					
+
+                    </tr>
+
+                    <tr id= "row3"> <!-- row 3-->
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a31" type= "button" id= "31" value= ""></input>
+
+                        </td>
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a32" type= "button" id= "32" value= ""></input>
+
+                        </td>
+
+                        <td> <!-- data -->
+
+                            <input class= "gameSquare a33" type= "button" id= "33" value= ""></input>
+
+                        </td>					
+
+                    </tr>				
+
+                </table>
+
+                </div> <!-- table section ends-->
+
+                <input type= "button" id= "resetButton" value= "New game"></input>
+
+            </div> <!-- centerSection -->
+
+		</div> <!-- fluid ends-->
+
+        </center>
+		
+	</body>
+	
+	<script>    <!-- SCRIPT STARTS -->
+	
+		
+		
+		// globals:
+		
+		var turnNumber = 0; 
+		var whoStarts; 
+		var whoInTurn;
+		var whoWithCross; // who plays with crosses human or compu
+        var lastMove;
+		
+		// nicknames:
+		
+		var buva11 = document.getElementById("11");
+		var buva12 = document.getElementById("12");
+		var buva13 = document.getElementById("13");
+		var buva21 = document.getElementById("21");
+		var buva22 = document.getElementById("22");
+		var buva23 = document.getElementById("23");
+		var buva31 = document.getElementById("31");
+		var buva32 = document.getElementById("32");
+		var buva33 = document.getElementById("33");		
+        
+        
+        function resetGame(){ // starts a new game
+            
+            buva11.value = ""; buva12.value = ""; buva13.value = "";
+            buva21.value = ""; buva22.value = ""; buva23.value = "";
+            buva31.value = ""; buva32.value = ""; buva33.value = "";
+            
+            turnNumber = 0; // reset turn number
+            
+            // hide table section, so buttons will not be clicked before
+			$("#tableSection").hide();
+		 
+			// hide info section
+			$("#infoSection").hide();
+            document.getElementById("infoBox").innerHTML = "";
+            
+            $("#resetButton").hide();
+            
+            $("#welcomeSection").fadeIn();
+            
+        } // reset game function ends
+		
+        function scanSolutions(){ // to help computer think
+            
+                           
+                    if (buva22.value === buva11.value &&
+                       buva33.value == "")
+                    {
+                        
+                        buttonsFunction("33");    
+                        
+                    }
+                    else if (buva22.value === buva13.value &&
+                       buva31.value == "")
+                    {
+                        
+                        buttonsFunction("31");
+                        
+                    }
+                    else if (buva22.value === buva31.value &&
+                       buva13.value == "")
+                    {
+                        
+                        buttonsFunction("13");
+                        
+                    }
+                    else if (buva22.value === buva33.value &&
+                       buva11.value == "") 
+                    {
+                        
+                        buttonsFunction("11");
+                        
+                    }
+                    
+                    else if (buva11.value === buva13.value &&
+                       buva12.value == "") {
+                        
+                        buttonsFunction("12");
+                        
+                        }
+                    
+                    else if (buva11.value === buva31.value &&
+                       buva21.value == "") {
+                        
+                        buttonsFunction("21");
+                        
+                        }
+                    
+                    else if (buva13.value === buva33.value &&
+                       buva23.value == "") {
+                        
+                        buttonsFunction("23");
+                        
+                        }
+                    
+                    else if (buva31.value === buva33.value &&
+                       buva32.value == "") {
+                        
+                        buttonsFunction("32");
+                        
+                        }
+                    
+                    else if (buva11.value === buva33.value &&
+                       buva22.value == "") {
+                        
+                        buttonsFunction("22");
+                        
+                        }
+                    
+                    else if (buva13.value === buva31.value &&
+                       buva22.value == "") {
+                        
+                        buttonsFunction("22");
+                        
+                        }
+                    else if (buva12.value === buva22.value &&
+                            buva32.value == "") {
+                        
+                        buttonsFunction("32");
+                        
+                    }
+            
+                    // find any place...
+        else if (buva11.value == ""){buttonsFunction("11");} else if (buva12.value == ""){buttonsFunction("12");}
+        else if (buva13.value == ""){buttonsFunction("13");} else if (buva21.value == ""){buttonsFunction("21");}
+        else if (buva22.value == ""){buttonsFunction("22");} else if (buva23.value == ""){buttonsFunction("23");}
+        else if (buva31.value == ""){buttonsFunction("31");} else if (buva32.value == ""){buttonsFunction("32");}
+        else if (buva33.value == ""){buttonsFunction("33");}    
+            
+                    else {console.log("cant find solution");}
+            
+        } // scanSolutions end
+		
+		function compuTurn(){ // handles computers game
+		
+            console.log("compuTurn", turnNumber);
+            
+            switch (turnNumber) { // play moves in different turns
+                    
+                case 1:
+                    
+                    let d2dice = 1 + Math.floor(Math.random() * 2);
+                    
+                    if (d2dice === 1) {
+                        
+                        buttonsFunction("22");
+                    } else {
+                    
+                    buttonsFunction("13");
+                    
+                    }
+                    
+                break;    
+                    
+                case 2:
+                    
+                    console.log("buva22: ",buva22.value);
+                    if (buva22.value != "") {
+                    
+                        buttonsFunction("11");
+                        
+                    } else {
+                        
+                        buttonsFunction("22");
+                    }
+                    
+                break;    
+                    
+                case 3:
+                    
+                    if (buva22.value != "" && buva13.value != "") {
+                        
+                        buttonsFunction("31");
+                        
+                    } else if (buva12.value != "" || 
+                               buva21.value != "" ||
+                               buva32.value != "" ||
+                               buva23.value != "" ){
+                        
+                        buttonsFunction("11");
+                        
+                    } else if (buva21.value != ""){
+                        
+                        buttonsFunction("21");
+                        
+                    } else if (lastMove == "31" && buva13 == "") {buttonsFunction(13);}
+                      else if (lastMove == "11" && buva33 == "") {buttonsFunction(33);}
+                      else if (lastMove == "33" && buva11 == "") {buttonsFunction(11);}
+                      else if (lastMove == "31" && buva13 == "") {buttonsFunction(13);}
+                    
+                    if (whoInTurn == "compu") { // if still no solution..
+                    
+                        scanSolutions();
+                    
+                    }
+                        
+                break;   
+                    
+                case 4:
+                   
+                    scanSolutions();
+                    
+                break;   
+                    
+                case 5:
+                    
+                    scanSolutions();
+                    
+                break;    
+                    
+                case 6:
+                    
+                    scanSolutions();
+                    
+                break;    
+                    
+                case 7:
+                    
+                    scanSolutions();
+                    
+                break;
+                    
+                
+                case 8:
+                    
+                    scanSolutions();
+                    
+                break;
+                    
+                
+                case 9:
+                    
+                    scanSolutions();
+                    
+                break;    
+                    
+                default: console.log("not found move");
+                    
+            } // switch ends
+		
+			// after ready:
+			
+			//turnNumber++;
+			// info = your turn
+		
+		} // compuTurn ends
+		
+		
+		function startGame(selectedSymbol){
+		
+            console.log("game starts");
+            
+			if (selectedSymbol == "crossSelect") { 
+			
+				whoWithCross = "human";  // set if human or compu plays with X
+				
+			} else {whoWithCross = "compu";}
+		
+			// hide welcome section.
+			$("#welcomeSection").hide();
+			
+			// random dice who starts. declare starter in info section.
+			// 1 is human starts and 2 is compu starts
+			let d2dice = 1 + Math.floor(Math.random() * 2);
+			console.log("diceResult:",d2dice) // to double check that this really randomizes.
+			
+			if (d2dice === 1) {
+			
+				whoStarts = "human";
+				whoInTurn = "human"
+			
+			} else {
+			
+				whoStarts = "compu";
+				whoInTurn = "compu";
+				
+			}
+			
+			// fadeIn info and table sections
+			$("#infoSection").fadeIn();
+			$("#tableSection").fadeIn();
+						
+			turnNumber++;
+            console.log("turn++. turn/whoStarts/whoInTurn ",turnNumber, whoStarts, whoInTurn);
+			
+			if (whoStarts === "compu") {
+			
+			compuTurn();
+			
+			}
+		} // start game ends
+		
+		function checkVictoryConditions(currentTable) { // this checks if game should end
+		
+            console.log("checking victory conds");
+            
+			var victoryDetected = 0;
+			const allSquares = [
+			buva11.value, buva12.value, buva13.value,
+			buva21.value, buva22.value, buva23.value,
+			buva31.value, buva32.value, buva33.value			
+			];
+			var emptySquares = [];
+			
+			// check if there are three in row of x or o
+			
+			/*  lines: 	1 = - 4 = | 5 = | 6 = |
+						2 = -
+						3 = -
+						7 =  \  8 = /	
+
+				combos: 
+				1:11,12,13 2: 21,22,23 3: 31,32,33
+				4:11,21,31 5:12,22,23 6:13,23,33
+				7:11,22,33 8: 13,22,31
+			  Check combos: */
+			
+			if (buva11.value === buva12.value && buva13.value === buva11.value && buva11.value != "") {console.log("victory line 1"); victoryDetected = 1;} //1
+			
+			if (buva21.value === buva22.value && buva21.value === buva23.value && buva21.value != "") {console.log("victory line 2"); victoryDetected = 2;} //2
+			
+			if (buva31.value === buva32.value && buva31.value === buva33.value && buva31.value != "") {console.log("victory line 3"); victoryDetected = 3;} //3
+			
+			if (buva11.value === buva21.value && buva11.value === buva31.value && buva11.value != "") {console.log("victory line 4"); victoryDetected = 4;} //4
+			
+			if (buva12.value === buva22.value && buva12.value === buva32.value && buva12.value != "") {console.log("victory line 5"); victoryDetected = 5;} //5
+			
+			if (buva13.value === buva23.value && buva23.value === buva33.value && buva13.value != "") {console.log("victory line 6"); victoryDetected = 6;} //6
+		
+			if (buva11.value === buva22.value && buva22.value === buva33.value && buva11.value != "") {console.log("victory line 7"); victoryDetected = 7;} //7
+	 
+			if (buva13.value === buva22.value && buva13.value === buva31.value && buva13.value != "") {console.log("victory line 8"); victoryDetected = 8;} //8
+			
+            /* too early place for this...
+			if (victoryDetected === 0) {return "continueGame";} // no victory. Game continues.
+			*/
+            console.log("victory? ",victoryDetected);
+            
+			if (victoryDetected > 0) { // lets see who won.
+			
+				if (whoInTurn === "compu") {
+                    
+                    console.log("computer victory");
+				
+                    document.getElementById("infoBox").innerHTML = "Computer wins!";
+                    
+                    $("#resetButton").fadeIn();
+                    
+                    return "stopGame";
+                    
+                } else if (whoInTurn === "human"){
+                    
+                    console.log("human victory");
+                    
+                    document.getElementById("infoBox").innerHTML = "You win!";
+                    
+                    $("#resetButton").fadeIn();
+                    
+                    return "stopGame";
+                
+                } // if yes, then declare winner
+                
+                console.log("victory? ", victoryDetected);
+                
+			} // if victoryDetect ends
+			
+			
+			// check if table is full
+            console.log("turnNumber check: ",turnNumber);
+            if (turnNumber >= 9) {
+                
+			// if yes, then declare draw
+                
+                console.log("draw!");
+                document.getElementById("infoBox").innerHTML = "The game is draw!";
+                $("#resetButton").fadeIn();
+                
+                return "stopGame";
+                
+            }
+            
+            return "continueGame";
+		
+		} // victory conditions checker ends
+		
+		function buttonsFunction(butID) { // handles button clicks
+            
+		    lastMove = butID; // save the last move
+             
+            console.log("button functions id: ", butID);
+            
+			switch (butID) {
+			
+				case "crossSelect":	
+				case "circleSelect": 
+				
+					startGame(butID); // after symbol is selected, lets start the game.
+				
+				break;
+				
+				case "11":
+				case "12":
+				case "13":
+				case "21":
+				case "22":
+				case "23":
+				case "31":
+				case "32":
+				case "33":
+				
+					if (document.getElementById(butID).value != "") { return; } // if already reserved, dont do anything
+
+					else { // if not reserved, lets reserve it:
+	
+						if (whoInTurn === "human") { // if human in turn
+						
+							if (whoWithCross === "human") {
+							
+								document.getElementById(butID).value = "X";
+							
+							} else {
+							
+								document.getElementById(butID).value = "O";
+							
+							}
+						
+						} else { // compu writes
+						
+							if (whoWithCross === "human") {
+							
+								document.getElementById(butID).value = "O";
+							
+							} else {
+							
+								document.getElementById(butID).value = "X";
+							
+							}						
+						
+						
+						} // compu writing ends
+					
+					} // writing to button ends	
+					
+
+					let continueOrStop = checkVictoryConditions();
+                
+                    // if victory was not detected. Lets continue:
+                    if (continueOrStop == "continueGame") {
+                    
+                    turnNumber++;
+
+                    if (whoInTurn === "human") {
+
+                        whoInTurn = "compu";
+                        console.log("turn change, was human");
+                        compuTurn();		
+
+                    }
+
+                    else if (whoInTurn === "compu") {
+
+                        console.log("turn change, was compu");
+                        whoInTurn = "human";
+
+                    }
+                        
+                        } // if continues
+				
+				break;
+                    
+                case "resetButton":
+                    
+                    resetGame();
+                    
+                break;    
+				
+				default: console.log("butID not found in switch");
+			
+			}  // switch ends
+            
+		} // buttonsFucntions ends
+		
+		 $(document).ready(function(){   // ---------- DOC IS READY TO USE -------------------
+		 
+			// hide table section, so buttons will not be clicked before
+			$("#tableSection").hide();
+		 
+			// hide info section
+			$("#infoSection").hide();
+             
+			// hide reset button
+			$("#resetButton").hide();
+		 		 
+		    $(":button").click(function (event) {  // event listener for buttons.
+                        
+                console.log("event listener for button activated");
+         
+                buttonsFunction(this.id); // fires function with id of clicked button.
+
+            }); 
+		
+		
+		
+		});      // _------------ DOC IS READY TO USE ENDS ----------------
+	
+	</script>
+	
+</html>
